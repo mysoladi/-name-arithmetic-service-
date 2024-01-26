@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom tutorial</title>
+</head>
+
+<body>
+    <h1>Arithmetic</h1>
+    <div style="display: flex; align-items: flex-start;">
+        <input id="input1"/>
+        <label>+</label>
+        <input id="input2"/>
+        <button onclick="arithmeticAddition()">
+            =
+        </button>
+        <label style="padding-left: 10px;" id="output1"></label>
+    </div>
+</body>
+
+<script>
+    async function arithmeticAddition() {
+        let num1 = document.getElementById('input1').value;
+        let num2 = document.getElementById('input2').value;
+
+        try {
+            // Make a GET request to the arithmetic-service
+            const response = await fetch(`http://localhost:3000/add?num1=${num1}&num2=${num2}`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            // Parse the JSON response
+            const result = await response.json();
+
+            // Display the result
+            document.getElementById('output1').innerHTML = result.result;
+        } catch (error) {
+            console.error('Error:', error.message);
+            document.getElementById('output1').innerHTML = 'Error occurred';
+        }
+    }
+
+
+</script>
+
+</html>
