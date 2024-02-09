@@ -19,16 +19,14 @@ app.get('/add', (req, res) => {
     }
 });
 
-app.get('/sub', (req, res) => {
-    const num3 = parseFloat(req.query.num3);
-    const num4 = parseFloat(req.query.num4);
+app.get('/subtract', (req, res) => {
+    const num1 = parseFloat(req.query.num1);
+    const num2 = parseFloat(req.query.num2);
 
-    if (isNaN(num3) || isNaN(num4)) {
+    if (isNaN(num1) || isNaN(num2)) {
         res.status(400).send('Invalid numbers provided');
     } else {
-        const sum = num3 - num4;
-        res.json({ result: sum });
+        const result = num1 - num2;
+        res.json({ result: result });
     }
 });
-
-app.listen(port);
