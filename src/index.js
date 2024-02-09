@@ -6,7 +6,7 @@ const port = 3000;
 
 // Enable CORS for your frontend domain
 app.use(cors({
-    origin: 'https://mysoladi.github.io' // Replace with your frontend origin
+    origin: 'https://mysoladi.github.io/arithmetic-service-front/' // Replace with your frontend origin
 }));
 
 app.get('/', (req, res) => {
