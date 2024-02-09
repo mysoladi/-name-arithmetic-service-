@@ -5,9 +5,7 @@ const path = require('path');
 const port = 3000;
 
 // Enable CORS for your frontend domain
-app.use(cors({
-    origin: 'https://mysoladi.github.io/' // Replace with your frontend origin
-}));
+app.use(cors());
 
 app.get('/', (req, res) => {
     // Send the HTML file when the root URL is accessed
