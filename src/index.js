@@ -1,15 +1,10 @@
 const express = require('express');
-const cors = require('cors');  // Add this line to import the CORS middleware
+const cors = require('cors');
 const app = express();
-const path = require('path');
-const port = 3000;
-
-// Enable CORS for your frontend domain
 app.use(cors());
-
+const port = 3000;
 app.get('/', (req, res) => {
-    // Send the HTML file when the root URL is accessed
-    res.sendFile(path.join(__dirname, 'arithmetic-service-front', 'index.html'));
+    res.send('Arithmetic service - Hello World!');
 });
 
 app.get('/add', (req, res) => {
@@ -24,6 +19,4 @@ app.get('/add', (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
-});
+app.listen(port);
