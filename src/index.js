@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors');  // Add this line to import the CORS middleware
 const port = 3000;
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
+// Enable CORS for your frontend domain
+app.use(cors({
+    origin: 'https://mysoladi.github.io' // Replace with your frontend origin
+}));
 
 app.get('/', (req, res) => {
     // Send the HTML file when the root URL is accessed
