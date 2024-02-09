@@ -8,7 +8,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     // Send the HTML file when the root URL is accessed
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'arithmetic-service-front', 'index.html'));
 });
 
 app.get('/add', (req, res) => {
