@@ -1,7 +1,7 @@
 const express = require('express');
+const cors = require('cors');  // Add this line to import the CORS middleware
 const app = express();
 const path = require('path');
-const cors = require('cors');  // Add this line to import the CORS middleware
 const port = 3000;
 
 // Enable CORS for your frontend domain
