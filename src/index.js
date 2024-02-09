@@ -30,3 +30,5 @@ app.get('/subtract', (req, res) => {
         res.json({ result: result });
     }
 });
+
+app.listen(port);
