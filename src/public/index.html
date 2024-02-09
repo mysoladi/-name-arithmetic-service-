@@ -27,7 +27,7 @@
 
         try {
             // Make a GET request to the arithmetic-service
-            const response = await fetch(`https://arithmetic-service-mysoladi.onrender.com//add?num1=${num1}&num2=${num2}`);
+            const response = await fetch("https://arithmetic-service-mysoladi.onrender.com//add/" + num1 + "/" + num2);
             
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
