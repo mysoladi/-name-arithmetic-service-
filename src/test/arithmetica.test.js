@@ -11,7 +11,7 @@ test('222 + 333 is equal to 555', () => {
 });
 
 test('666 - 333 is equal to 333', () => {
-    expect(sub(633, 333)).toBe(333);
+    expect(sub(666, 333)).toBe(333);
 });
 
 test('6 - 3 is equal to 3', () => {
